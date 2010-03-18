@@ -2,7 +2,7 @@ module ActiveRecord
   module Validations
     module ClassMethods
       def validates_well_formed_xml(*attr_names)
-        configuration = { :message => ActiveRecord::Errors.default_error_messages[:invalid], 
+        configuration = { :message => I18n.translate('activerecord.errors.messages')[:invalid], 
                           :on => :save, 
                           :with => nil }
         configuration.update(attr_names.pop) if attr_names.last.is_a?(Hash)
