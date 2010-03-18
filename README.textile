@@ -1,6 +1,6 @@
 h2. ValidatesXml
 
-Provides validates_xml method allowing to validate xml correctness of ActiveRecord attributes.
+Provides validates_well_formed_xml method allowing to validate xml well-formedness of ActiveRecord attributes.
 
 h2. Acknowledgment
 

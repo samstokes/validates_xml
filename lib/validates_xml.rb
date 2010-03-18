@@ -1,7 +1,7 @@
 module ActiveRecord
   module Validations
     module ClassMethods
-      def validates_xml(*attr_names)
+      def validates_well_formed_xml(*attr_names)
         configuration = { :message => ActiveRecord::Errors.default_error_messages[:invalid], 
                           :on => :save, 
                           :with => nil }
@@ -11,7 +11,7 @@ module ActiveRecord
             REXML::Document.new("<base>#{value}</base>")
           rescue REXML::ParseException => ex
             record.errors.add(attr_name, 
-                              "is not valid xml.  #{ex.continued_exception}")
+                              "is not well-formed xml.  #{ex.continued_exception}")
           end
         end
       end
